@@ -13,8 +13,8 @@ app.use(cors());
 const pool = mysql.createPool({
   host: 'protocolMpligaH',
   user: 'mpligaAdminU',
-  password: 'yq$n4$hVEUZ9C6*',
-  database: 'freedb_protocol-db',
+  password: 'u3wr5fxacqdv6svs',
+  database: 'blpjeujegp2kxpghonbx',
   connectionLimit: 10
 });
 
