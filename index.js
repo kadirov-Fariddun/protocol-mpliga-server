@@ -106,7 +106,7 @@ app.put('/api/players/:id', (req, res) => {
 
 // все команды
 app.get('/api/user/', (req, res) => {
-  pool.query('SELECT * FROM `teams`', (err, result) => {
+  pool.query('SELECT * FROM `user`', (err, result) => {
       if (err) {
           res.status(500).json({ error: 'Ошибка выполнения запроса к базе данных' });
           console.error(err);
