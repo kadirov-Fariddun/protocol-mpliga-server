@@ -11,10 +11,10 @@ app.use(cors());
 
 
 const pool = mysql.createPool({
-  host: 'blpjeujegp2kxpghonbx-mysql.services.clever-cloud.com',
-  user: 'u3wr5fxacqdv6svs',
-  password: 'FZsZfwgNpbXRmV6UE2UQ',
-  database: 'blpjeujegp2kxpghonbx',
+  host: 'https://kadiropm.beget.tech',
+  user: 'kadiropm_prot',
+  password: 'kadiropmProt1',
+  database: 'kadiropm_prot',
   connectionLimit: 10
 });
 
@@ -104,7 +104,17 @@ app.put('/api/players/:id', (req, res) => {
 });
 
 
-
+// все команды
+app.get('/api/user/', (req, res) => {
+  pool.query('SELECT * FROM `teams`', (err, result) => {
+      if (err) {
+          res.status(500).json({ error: 'Ошибка выполнения запроса к базе данных' });
+          console.error(err);
+          return;
+      }
+      res.json(result);
+  });
+});
 
 
 app.listen(PORT, () => {
