@@ -11,7 +11,7 @@ app.use(cors());
 
 
 const pool = mysql.createPool({
-  host: 'https://kadiropm.beget.tech',
+  host: 'kadiropm.beget.tech',
   user: 'kadiropm_prot',
   password: 'kadiropmProt1',
   database: 'kadiropm_prot',
