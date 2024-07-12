@@ -11,10 +11,10 @@ app.use(cors());
 
 
 const pool = mysql.createPool({
-  host: 'kadiropm.beget.tech',
-  user: 'kadiropm_prot',
+  host: '45.84.225.47',
+  user: 'root',
   password: 'kadiropmProt1',
-  database: 'kadiropm_prot',
+  database: 'protocol-mpliga',
   connectionLimit: 10
 });
 
