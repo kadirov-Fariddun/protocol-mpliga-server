@@ -115,6 +115,17 @@ app.get('/api/user/', (req, res) => {
       res.json(result);
   });
 });
+// возврашем таблицу лиги
+app.get('/api/table/', (req, res) => {
+  pool.query('SELECT * FROM `mpliga_table` ORDER BY `point` DESC', (err, result) => {
+      if (err) {
+          res.status(500).json({ error: 'Ошибка выполнения запроса к базе данных' });
+          console.error(err);
+          return;
+      }
+      res.json(result);
+  });
+});
 
 
 app.listen(PORT, () => {
