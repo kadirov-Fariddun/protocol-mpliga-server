@@ -131,7 +131,7 @@ app.get('/api/table/', (req, res) => {
 app.put('/api/table/:id', (req, res) => {
   const id = req.params.id;
   const { matches, wins, draw ,lose ,zm ,pm ,point} = req.body;
-  pool.query('UPDATE `mpliga_table` SET `matches`= ? ,`wins` = ?, `draw` = ?,`lose` = ?, `zm` = ?, `pm` = ?, `ponit` = ?, WHERE `id` = ?',
+  pool.query('UPDATE `mpliga_table` SET `matches`= ? ,`wins` = ?, `draw` = ?,`lose` = ?, `zm` = ?, `pm` = ?, `point` = ?, WHERE `id` = ?',
     [matches, wins, draw ,lose ,zm ,pm ,point,id], (err, result) => {
       if (err) {
           res.status(500).json({ error: 'Ошибка выполнения запроса к базе данных' });
@@ -141,6 +141,7 @@ app.put('/api/table/:id', (req, res) => {
       res.json({ message: `Данные для записи с id ${id} успешно обновлены`,body:{matches, wins, draw ,lose ,zm ,pm ,point}});
   });
 });
+
 app.listen(PORT, () => {
   console.log('Server running on PORT: ' + PORT);
 });
